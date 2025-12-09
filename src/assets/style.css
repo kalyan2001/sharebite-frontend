@@ -1,0 +1,232 @@
+body {
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* App header color */
+h1, h2 {
+  color: #2563eb;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.45);
+}
+
+
+/* Customize buttons */
+.btn-primary {
+  background-color: #2563eb;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #1e4ed8;
+}
+
+
+/* Custom form box shadow */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+  position: relative;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+}
+
+.step {
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Auth Pages (Login / Register) ===== */
+.auth-section {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.auth-card {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.auth-title {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.auth-input {
+  border-radius: 8px !important;
+}
+
+.auth-btn {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.auth-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.auth-footer {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand img {
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+.navbar .btn {
+  font-size: 14px;
+}
+
+/* --- Donor Dashboard Card Styling --- */
+.card {
+  transition: all 0.25s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.card-body h5 {
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.8em;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-danger:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+
+/* --- Recipient Dashboard Filter Bar Styling --- */
+.card.shadow-sm.border-0.p-3.mb-4 {
+  background-color: #f9f9fc;
+  border-radius: 12px;
+}
+
+.form-label i {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.btn-outline-secondary.btn-sm i {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.Toastify__toast {
+  font-size: 0.9rem;
+}
+.Toastify__toast-container {
+  z-index: 2000;
+}
+
+.hero-about {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  padding: 80px 0;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.team-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #2563eb;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .navbar .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar img {
+    margin-bottom: 8px;
+  }
+}
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "Food Donation App",
+  "short_name": "FoodDonate",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "version": "2",
+  "icons": [
+    {
+      "src": "logo.svg?v=2",
+      "sizes": "any", 
+      "type": "image/svg+xml"
+    }
+  ]
+}
+

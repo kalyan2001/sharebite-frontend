@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Surplus Food", "description": "Fresh meals, leftovers from events" },
+  { "id": 2, "name": "Canned Food", "description": "Tins, jars, and sealed items" },
+  { "id": 3, "name": "Packaged Snacks", "description": "Chips, biscuits, and chocolates" },
+  { "id": 4, "name": "Baked Goods", "description": "Bread, muffins, and pastries" },
+  { "id": 5, "name": "Fruits & Vegetables", "description": "Fresh produce donations" },
+  { "id": 6, "name": "Frozen/Beverages", "description": "Milk, juices, and frozen meals" }
+]
