@@ -1,29 +1,32 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import logo from "../assets/logo.png";
+import kalyan from "../assets/kalyan.jpeg";
+import rakshith from "../assets/rakshith.jpeg";
+import isha from "../assets/isha.jpeg";
+import mahesh from "../assets/mahesh.jpeg";
 
 function About() {
   const team = [
     {
       name: "Kalyan Charagondla",
       role: "Backend Developer & Email Automation",
-      img: logo,
+      img: kalyan,
     },
     {
       name: "Rakshith Dandlamudi",
       role: "Frontend Developer & PWA Integration",
-      img: logo,
+      img: rakshith,
     },
     {
       name: "Isha",
       role: "Recipient Flow & UX Enhancements",
-      img: logo,
+      img: isha,
     },
     {
       name: "Mahesh Cheera",
       role: "Dashboard & Database Design",
-      img: logo,
+      img: mahesh,
     },
   ];
 
@@ -92,11 +95,11 @@ function About() {
           {team.map((member, index) => (
             <div className="col-md-3 col-sm-6" key={index}>
               <div className="team-card p-4 text-center shadow-sm">
-                {/* <img
+                <img
                   src={member.img}
                   alt=""
                   className="team-img mb-3"
-                /> */}
+                />
                 <h5 className="fw-bold">{member.name}</h5>
                 <p className="text-muted small">{member.role}</p>
               </div>
