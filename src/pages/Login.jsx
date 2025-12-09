@@ -11,6 +11,7 @@ function Login() {
   const [errors, setErrors] = useState({});
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
+  const API = import.meta.env.VITE_API_URL;
 
   const validateForm = () => {
     const newErrors = {};
@@ -39,7 +40,7 @@ function Login() {
       const user = userCredential.user;
 
       const token = await user.getIdToken();
-      const res = await fetch("http://localhost:5000/api/auth/verify", {
+      const res = await fetch(`${API}/api/auth/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),

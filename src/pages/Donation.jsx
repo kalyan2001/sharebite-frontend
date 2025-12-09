@@ -14,6 +14,7 @@ function Donation() {
   const [transactionId, setTransactionId] = useState("");
   const [orderId, setOrderId] = useState("");
   const [showReceiptButton, setShowReceiptButton] = useState(false);
+  const API = import.meta.env.VITE_API_URL;
 
   const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID;
 
@@ -87,7 +88,7 @@ function Donation() {
                   style={{ layout: "vertical", shape: "rect" }}
                   createOrder={async () => {
                     const { data } = await axios.post(
-                      "http://localhost:5000/api/payments/create-order",
+                      `${API}/api/payments/create-order`,
                       { amount }
                     );
                     return data.id;
@@ -95,7 +96,7 @@ function Donation() {
                   onApprove={async (data) => {
                     try {
                       const res = await axios.post(
-                        "http://localhost:5000/api/payments/capture-order",
+                        `${API}/api/payments/capture-order`,
                         { orderId: data.orderID }
                       );
 

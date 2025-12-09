@@ -8,6 +8,8 @@ function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [notifications, setNotifications] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
+
   let deferredPrompt;
 
   // Load user from localStorage
@@ -31,7 +33,7 @@ function Navbar() {
     const fetchNotifications = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/notifications?userId=${userId}`
+          `${API}/api/notifications?userId=${userId}`
         );
         const data = await res.json();
         setNotifications(data);
@@ -77,7 +79,7 @@ function Navbar() {
 
     try {
       await fetch(
-        `http://localhost:5000/api/notifications/mark-read/${userId}`,
+        `${API}/api/notifications/mark-read/${userId}`,
         {
           method: "PUT",
         }

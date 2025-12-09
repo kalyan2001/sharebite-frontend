@@ -13,6 +13,7 @@ function RecipientDashboard() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [subscriptionLoading, setSubscriptionLoading] = useState(false);
   const [subscriptionChecked, setSubscriptionChecked] = useState(false);
+  const API = import.meta.env.VITE_API_URL;
 
   const user = JSON.parse(localStorage.getItem("user"));
   const recipientId = user?.uid || user?._id;
@@ -21,7 +22,7 @@ function RecipientDashboard() {
   useEffect(() => {
     const fetchFoods = async () => {
       try {
-        const url = new URL("http://localhost:5000/api/food/available");
+        const url = new URL(`${API}/api/food/available`);
         if (recipientId) url.searchParams.set("recipientId", recipientId);
 
         const res = await fetch(url.toString());
@@ -44,7 +45,7 @@ function RecipientDashboard() {
     const fetchStatus = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/subscriptions/status?recipientId=${recipientId}`
+          `${API}/api/subscriptions/status?recipientId=${recipientId}`
         );
         const data = await res.json();
         setIsSubscribed(data.subscribed);
@@ -62,7 +63,7 @@ function RecipientDashboard() {
     setSubscriptionLoading(true);
     try {
       const res = await fetch(
-        "http://localhost:5000/api/subscriptions/subscribe",
+        `${API}/api/subscriptions/subscribe`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -91,7 +92,7 @@ function RecipientDashboard() {
     setSubscriptionLoading(true);
     try {
       const res = await fetch(
-        "http://localhost:5000/api/subscriptions/unsubscribe",
+        `${API}/api/subscriptions/unsubscribe`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
@@ -114,7 +115,7 @@ function RecipientDashboard() {
   const handleReserve = async (foodId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/food/${foodId}/reserve`,
+        `${API}/api/food/${foodId}/reserve`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -148,7 +149,7 @@ function RecipientDashboard() {
         const { latitude, longitude } = position.coords;
         try {
           const res = await fetch(
-            `http://localhost:5000/api/food/${foodId}/pickup`,
+            `${API}/api/food/${foodId}/pickup`,
             {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },

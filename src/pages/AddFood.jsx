@@ -10,6 +10,7 @@ function AddFood() {
   const navigate = useNavigate();
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const donorId = storedUser?.uid || storedUser?._id;
+  const API = import.meta.env.VITE_API_URL;
 
   const [form, setForm] = useState({
     name: "",
@@ -52,7 +53,7 @@ function AddFood() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/food/add", {
+      const res = await fetch(`${API}/api/food/add`, {
         method: "POST",
         body: formData,
       });

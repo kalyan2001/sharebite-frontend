@@ -6,6 +6,7 @@ function DonorDashboard() {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const API = import.meta.env.VITE_API_URL;
 
   const user = JSON.parse(localStorage.getItem("user"));
   const donorId = user?.uid || user?._id;
@@ -14,7 +15,7 @@ function DonorDashboard() {
     const fetchFoods = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/food/donor/${donorId}`
+          `${API}/api/food/donor/${donorId}`
         );
         if (!res.ok) throw new Error("Failed to fetch food items.");
         const data = await res.json();
